@@ -1,0 +1,5 @@
+fr.dc.clients.datamodel
+fr.dc.clients.services.dao
+fr.dc.clients.services.dao.impl
+fr.dc.clients.services.servlets
+fr.dc.clients.test.junit

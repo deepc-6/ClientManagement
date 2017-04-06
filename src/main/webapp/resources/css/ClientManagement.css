@@ -1,0 +1,174 @@
+body {
+  background-image: none;
+}
+
+.content {
+	padding: 80px;
+}
+
+.navbar {
+	height: 50px !important;
+	color: rgba(255,255,255,.7);
+    border: 1px solid rgba(255,255,255,.3);
+    background-color: black;
+}
+
+.navbar a {
+	text-decoration: none;
+	color: rgba(255,255,255,.7);
+	top: 4px;
+	position: relative;
+	font-size: 14px;
+}
+
+.navbar a:hover {
+	text-decoration: none;
+	color: yellow;
+}
+
+.headerDiv {
+  margin-bottom: 20px;
+  text-align: center;
+  min-width: 500px;
+}
+
+p {
+  margin:0;
+}
+
+.formDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 500px;
+  margin-bottom: 30px;
+  min-width: 500px;
+}
+
+.formLeftDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 200px;
+}
+
+.formRightDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-width: 350px;
+  width: 500px;
+}
+
+.emptyDiv {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.alertDiv {
+  text-align: center;
+  min-width: 500px;
+  margin-bottom: 10px;
+}
+
+.alertCloseLink {
+  float: right;
+  cursor: pointer;
+}
+
+.buttonDiv {
+  text-align: center;
+  min-width: 500px;
+}
+
+hr {
+	margin: 50px 0;
+}
+
+.searchDiv {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 50px;
+}
+
+.searchDiv input {
+	width: 500px;
+}
+
+#addClientButton {
+  width: 200px;
+}
+
+#modifyClientButton {
+  width: 50px;
+}
+
+#deleteClientButton {
+  width: 50px;
+}
+
+th {
+  text-align: center;
+}
+
+td {
+  text-align: center;
+  padding: 0;
+  vertical-align: middle !important;
+  height: 63px;
+}
+
+.clientDisplayTable {
+	margin: 0;
+}
+
+#tableEmptyDiv {
+    text-align: center;
+    border: 1px solid gainsboro;
+    padding: 50px;
+	border-top: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.btn.focus, .btn-primary.focus, .btn-primary:focus, .btn-success.focus, .btn-success:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.fieldTd {
+  max-width: 50px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.buttonTd {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.modal-title {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 22px;
+}
+
+.modal-content {
+  width: 600px;
+}
+
+.modal-body {
+  padding: 40px;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.modalFooterButton {
+  width: 100px;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="resources/css/ClientManagement.css">
+</head>
+
+<body>
+
+	<!-- NAVBAR -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<a data-ui-sref="home">HOME</a>
+	</nav>
+
+	<!-- CONTENT -->
+	<div class="content">
+
+		<!-- HEADER -->
+		<div class="headerDiv">
+			<h3>Client</h3>
+		</div>
+
+		<!-- ALERTS -->
+		<div
+			data-ng-show="!nameEmpty && !addSuccess && !saveSuccess && !deleteSuccess"
+			class="emptyDiv"></div>
+		<div data-ng-show="nameEmpty" class="alertDiv alert alert-danger">
+			<p>
+				<strong>Error!</strong> Business Name cannot be empty.<a
+					class="alertCloseLink" data-ng-click="closeAlert('name')">&times;</a>
+			</p>
+		</div>
+		<div data-ng-show="addSuccess" class="alertDiv alert alert-success">
+			<p>
+				<strong>Success!</strong> Client data added successfully.<a
+					class="alertCloseLink" data-ng-click="closeAlert('add')">&times;</a>
+			</p>
+		</div>
+		<div data-ng-show="saveSuccess" class="alertDiv alert alert-success">
+			<p>
+				<strong>Success!</strong> Client data modified successfully.<a
+					class="alertCloseLink" data-ng-click="closeAlert('save')">&times;</a>
+			</p>
+		</div>
+		<div data-ng-show="deleteSuccess" class="alertDiv alert alert-success">
+			<p>
+				<strong>Success!</strong> Client data deleted successfully.<a
+					class="alertCloseLink" data-ng-click="closeAlert('delete')">&times;</a>
+			<p>
+		</div>
+
+
+		<!-- INPUT FORM -->
+		<div class="formDiv">
+
+			<!-- INPUT FORM LABELS -->
+			<div class="formLeftDiv">
+				<p>Business Name</p>
+				<p>Interlocuter</p>
+				<p>Address</p>
+				<p>Postal Code</p>
+				<p>City</p>
+				<p>Telephone</p>
+				<p>Email</p>
+				<p>Comment</p>
+			</div>
+
+			<!-- INPUT FORM FIELDS -->
+			<div class="formRightDiv">
+				<input type="text" class="form-control"
+					placeholder="Enter business name" data-ng-model="businessName">
+				<input type="text" class="form-control"
+					placeholder="Enter interlocuter" data-ng-model="interlocuter">
+				<input type="text" class="form-control" placeholder="Enter address"
+					data-ng-model="address"> <input type="text"
+					class="form-control" placeholder="Enter postal code"
+					data-ng-model="zipCode"> <input type="text"
+					class="form-control" placeholder="Enter city" data-ng-model="city">
+				<input type="text" class="form-control"
+					placeholder="Enter telephone" data-ng-model="phone"> <input
+					type="email" class="form-control" placeholder="Enter email"
+					data-ng-model="clientEmail"> <input type="text"
+					class="form-control" placeholder="Enter comment"
+					data-ng-model="comment">
+			</div>
+
+		</div>
+
+		<!-- ADD CLIENT BUTTON -->
+		<div class="buttonDiv">
+			<button id="addClientButton" class="btn btn-success"
+				data-ng-click="addClientDetails()">Add</button>
+		</div>
+
+		<!-- DIVIDER -->
+		<hr class="divider" />
+
+		<div class="searchDiv">
+			<input type="text" class="form-control" placeholder="Search"
+				data-ng-model="searchText">
+		</div>
+
+
+		<!-- CLIENT LIST DISPLAY TABLE -->
+		<table class="clientDisplayTable table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th>Business Name</th>
+					<th>Interlocuter</th>
+					<th>Address</th>
+					<th>Postal Code</th>
+					<th>City</th>
+					<th>Phone</th>
+					<th>E-mail address</th>
+					<th>Comment</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr
+					data-ng-repeat="client in clients | ClientManagementFilter: searchText track by $index">
+					<td class="fieldTd">{{client.businessName}}</td>
+					<td class="fieldTd">{{client.interlocuter}}</td>
+					<td class="fieldTd">{{client.address}}</td>
+					<td class="fieldTd">{{client.zipCode}}</td>
+					<td class="fieldTd">{{client.city}}</td>
+					<td class="fieldTd">{{client.phone}}</td>
+					<td class="fieldTd">{{client.email}}</td>
+					<td class="fieldTd">{{client.comment}}</td>
+					<td class="buttonTd">
+						<button id="modifyButton" class="btn btn-primary"
+							data-toggle="modal" data-target="#modifyModal"
+							data-ng-click="modifyClientDetails(client)">Modify</button>
+						<button id="deleteButton" class="btn btn-danger"
+							data-ng-click="deleteClientDetails(client.id)">Delete</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<!-- NO CLIENTS FOUND ALERT -->
+		<div
+			data-ng-if="clients.length==0 || (clients | ClientManagementFilter: searchText) == false"
+			id="tableEmptyDiv">
+			<p>No clients found</p>
+		</div>
+
+		<!-- MODIFY CLIENT MODAL -->
+		<div data-ng-include="'resources/views/ClientModifyModal.html'"
+			id="modifyModal" class="modal fade" tabindex="-1" role="dialog"></div>
+
+	</div>
+
+</body>
+
+
+</html>

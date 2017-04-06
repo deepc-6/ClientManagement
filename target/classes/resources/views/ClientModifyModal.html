@@ -1,0 +1,37 @@
+<!-- CLIENT MODIFY MODAL -->
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Modify Client Details</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+            <div class="formDiv">
+                <div class="formLeftDiv">
+                    <p>Business Name</p>
+                    <p>Interlocuter</p>
+                    <p>Address</p>
+                    <p>Postal Code</p>
+                    <p>City</p>
+                    <p>Telephone</p>
+                    <p>Email</p>
+                    <p>Comment</p>
+                </div>
+                <div class="formRightDiv">
+                    <input type="text" class="form-control" placeholder="Enter business name" data-ng-model="client.businessName">
+                    <input type="text" class="form-control" placeholder="Enter interlocuter" data-ng-model="client.interlocuter">
+                    <input type="text" class="form-control" placeholder="Enter address" data-ng-model="client.address">
+                    <input type="text" class="form-control" placeholder="Enter postal code" data-ng-model="client.zipCode">
+                    <input type="text" class="form-control" placeholder="Enter city" data-ng-model="client.city">
+                    <input type="text" class="form-control" placeholder="Enter telephone" data-ng-model="client.phone">
+                    <input type="email" class="form-control" placeholder="Enter email" data-ng-model="client.email">
+                    <input type="text" class="form-control"  placeholder="Enter comment" data-ng-model="client.comment">
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="modalFooterButton btn btn-success" data-dismiss="modal" data-ng-click="saveClientDetails()">Save</button>
+            <button type="button" class="modalFooterButton btn btn-danger" data-dismiss="modal">Cancel</button>
+        </div>
+    </div>
+</div>
